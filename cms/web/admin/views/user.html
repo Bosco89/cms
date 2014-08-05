@@ -88,6 +88,13 @@
                     <p class="help-block">For USACO-like contests, the start of the user's time-frame. As an ISO 8601 combined date and time representation in UTC (i.e. "<em>YYYY</em>-<em>MM</em>-<em>DD</em>T<em>hh</em>:<em>mm</em>:<em>ss</em>Z").</p>
                 </div>
             </div>
+            <div class="form-group" ng-class="{'has-error': !form.delay_time.$valid}">
+                <label for="user_delay_time" class="col-md-3 control-label">Delay time</label>
+                <div class="col-md-9">
+                    <input type="number" id="user_delay_time" name="delay_time" class="form-control" ng-model="user.delay_time" required>
+                    <p class="help-block">Amount of seconds the time-frame is shifted forward.</p>
+                </div>
+            </div>
             <div class="form-group" ng-class="{'has-error': !form.extra_time.$valid}">
                 <label for="user_extra_time" class="col-md-3 control-label">Extra time</label>
                 <div class="col-md-9">

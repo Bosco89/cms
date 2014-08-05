@@ -32,6 +32,23 @@
             </div>
         </fieldset>
         <fieldset>
+            <legend>Interface and languages</legend>
+            <div class="form-group">
+                <label for="contest_allowed_localizations" class="col-md-3 control-label">Allowed Interface Localizations</label>
+                <div class="col-md-9">
+                    <input type="text" id="contest_allowed_localizations" name="allowed_localizations" class="form-control" ng-model="contest.allowed_localizations">
+                    <p class="help-block">List of language codes, leave empty for all available languages</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contest_languages" class="col-md-3 control-label">Allowed Languages</label>
+                <div class="col-md-9">
+                    <select multiple name="languages" id="contest_languages" ng-model="contest.languages" ng-options="lang.shortname as lang.name for lang in supported_languages" class="form-control">
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
             <legend>Timing</legend>
             <div class="form-group" ng-class="{'has-error': !form.start.$valid}">
                 <label for="contest_start" class="col-md-3 control-label">Start time</label>
@@ -98,7 +115,7 @@
             <div class="form-group" ng-class="{'has-error': !form.token_mode.$valid}">
                 <label for="contest_token_mode" class="col-md-3 control-label">Token mode</label>
                 <div class="col-md-9">
-                    <select id="contest_token_mode" name="token_mode" class="form-control" ng-model="contest.token_mode" ng-options="['disable', 'finite', 'infinite']"></select>
+                    <select id="contest_token_mode" name="token_mode" class="form-control" ng-model="contest.token_mode" ng-options="label for label in ['disabled', 'finite', 'infinite']"></select>
                 </div>
             </div>
             
@@ -127,10 +144,10 @@
                     <p class="help-block">In seconds.</p>
                 </div>
             </div>
-            <div class="form-group" ng-class="{'has-error': !form.token_gen_time.$valid}">
-                <label for="contest_token_gen_time" class="col-md-3 control-label">Interval between token generation</label>
+            <div class="form-group" ng-class="{'has-error': !form.token_gen_interval.$valid}">
+                <label for="contest_token_gen_interval" class="col-md-3 control-label">Interval between token generation</label>
                 <div class="col-md-9">
-                    <input type="number" id="contest_token_gen_time" name="token_gen_time" class="form-control" ng-model="contest.token_gen_time" required>
+                    <input type="number" id="contest_token_gen_interval" name="token_gen_interval" class="form-control" ng-model="contest.token_gen_interval" required>
                     <p class="help-block">In seconds.</p>
                 </div>
             </div>

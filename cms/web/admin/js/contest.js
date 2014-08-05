@@ -94,6 +94,15 @@ angular.module('aws.contest', [])
             $scope.resetContest();
         });
 
+        $scope.supported_languages = [
+          {name: "C",      shortname:"c"},
+          {name: "C++",    shortname:"cpp"},
+          {name: "Pascal", shortname:"pas"},
+          {name: "PHP",    shortname:"php"},
+          {name: "Python", shortname:"py"},
+          {name: "Java",   shortname:"java"},
+        ];
+
         $scope.resetContest = function () {
             $scope.contest = angular.copy($scope.master);
         };
